@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const schedules = [
+  { name: 'Home Daily', detail: 'Local and dedicated runs. Home every night, usually within a set radius.' },
+  { name: 'Home Weekends', detail: 'Regional. Out during the week, back most weekends.' },
+  { name: '7 on / 7 off', detail: 'A full week out, a full week home. Predictable, and rare.' },
+  { name: '14 on / 7 off', detail: 'Two weeks out, one week home. Common on longer OTR fleets.' },
+  { name: 'Long OTR', detail: 'Three weeks or more between resets. Highest miles, most time away.' },
+];
+---
+<Layout
+  title="HomeTimeJobs — CDL Jobs Organized Around When You Get Home"
+  description="Compare home time, pay, and equipment across trucking companies. Find CDL-A driving jobs that fit the life you actually want."
+>
+  <section class="bg-navy text-cream">
+    <div class="mx-auto max-w-4xl px-5 py-20 text-center">
+      <h1 class="text-4xl font-bold leading-tight sm:text-5xl">
+        The question isn't what it pays.<br />
+        <span class="text-gold">It's when you get home.</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate">
+        Every job board leads with cents per mile. Drivers leave over home time.
+        We built this the other way around — schedule first, then pay, then everything else.
+      </p>
+      <a href="#apply"
+         class="mt-8 inline-block rounded bg-gold px-8 py-3 font-semibold text-navy hover:bg-gold-light transition-colors">
+        Get Matched
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-5 py-16">
+    <h2 class="text-2xl font-bold">Start with the schedule</h2>
+    <p class="mt-2 max-w-2xl text-slate">
+      Carriers advertise home time in shorthand that doesn't always mean what it sounds like.
+      Here's what each one looks like in practice.
+    </p>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {schedules.map(s => (
+        <div class="rounded-lg border border-navy/10 bg-white p-5">
+          <p class="font-semibold text-navy">{s.name}</p>
+          <p class="mt-2 text-sm text-slate">{s.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <a href="/home-time" class="mt-8 inline-block font-semibold text-teal hover:underline">
+      Read the full breakdown &rarr;
+    </a>
+  </section>
+
+  <section class="border-y border-navy/10 bg-white py-16">
+    <div class="mx-auto max-w-5xl px-5">
+      <h2 class="text-2xl font-bold">What we actually check</h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-3">
+        <div>
+          <p class="font-semibold text-gold">Home time, verified</p>
+          <p class="mt-2 text-sm text-slate">
+            Not the recruiting brochure — what drivers on that fleet actually experience.
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold text-gold">Pay, translated</p>
+          <p class="mt-2 text-sm text-slate">
+            CPM, percentage, per diem, detention, and what the guaranteed minimum really covers.
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold text-gold">Equipment and freight</p>
+          <p class="mt-2 text-sm text-slate">
+            Truck age, governed speed, APU, no-touch or not, rider and pet policy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <LeadForm />
+</Layout>

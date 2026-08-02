@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const faqs = [
+  {
+    q: 'How does cents per mile pay work for truck drivers?',
+    a: 'Cents per mile (CPM) pays a fixed rate for each mile driven. The critical detail is which miles count. Practical miles or hub miles reflect the actual route driven, while shorter calculation methods can pay less than the distance actually covered. A lower CPM that pays practical miles can out-earn a higher CPM that does not.'
+  },
+  {
+    q: 'What is percentage pay in trucking?',
+    a: 'Percentage pay gives the driver a share of the revenue the load generates, commonly 25 to 30 percent for company drivers and higher for owner-operators. Earnings rise with freight rates and fall with them, so percentage pay rewards strong markets and exposes the driver to weak ones.'
+  },
+  {
+    q: 'What is detention pay?',
+    a: 'Detention pay compensates a driver for time spent waiting at a shipper or receiver beyond a set free period, usually two hours. Terms vary widely, and the questions that matter are when the clock starts, what the hourly rate is, and whether there is a cap per stop.'
+  },
+  {
+    q: 'What is per diem pay and should I take it?',
+    a: 'Per diem reclassifies part of a driver\'s pay as a non-taxable meal and expense allowance, increasing take-home pay in the short term. The trade-off is that it lowers reported gross income, which can reduce Social Security credits and affect mortgage or loan qualification. It benefits some drivers and disadvantages others depending on their situation.'
+  },
+  {
+    q: 'What should I look at besides cents per mile?',
+    a: 'Average weekly miles matters as much as the rate, since a high CPM with low miles pays less than the reverse. Also weigh guaranteed minimum pay, detention and layover terms, how often the truck sits, home time frequency, and benefits cost. Annual take-home is the number that matters, not the advertised rate.'
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Layout
+  title="How Truck Driver Pay Works — CPM, Percentage, Detention, Per Diem"
+  description="Cents per mile, percentage pay, detention, per diem, and guaranteed minimums explained in plain English — and what to check before comparing two offers."
+  schema={schema}
+>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">How driver pay actually works</h1>
+    <p class="mt-4 text-lg text-slate">
+      Two carriers can advertise the same cents per mile and pay very differently.
+      The rate is the headline. The structure underneath it is what lands in your account.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">The structures</h2>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Cents per mile</h3>
+    <p class="mt-2 text-slate">
+      The most common model. The number that matters isn't the rate — it's the rate multiplied by
+      the miles you'll actually run, calculated the way that carrier calculates them.
+      Ask whether they pay practical miles, and ask what the fleet's weekly average really is.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Percentage of revenue</h3>
+    <p class="mt-2 text-slate">
+      You take a share of what the load bills. Good markets pay well; soft markets don't.
+      More common for owner-operators, and it requires trusting the carrier's transparency
+      about what loads actually billed.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Hourly and daily</h3>
+    <p class="mt-2 text-slate">
+      Usual on dedicated and local accounts. Predictable, and it pays you for time spent
+      sitting — which mileage pay does not. Often the better deal on accounts with heavy
+      loading, unloading, or waiting.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">What quietly moves the number</h2>
+    <ul class="mt-4 space-y-3 text-slate">
+      <li><strong class="text-navy">Weekly miles.</strong> $0.60 at 2,800 miles beats $0.70 at 2,200. Always ask for the fleet average, not the top performer.</li>
+      <li><strong class="text-navy">Guaranteed minimum.</strong> What you're paid in a bad week. This is the floor that protects you when freight softens.</li>
+      <li><strong class="text-navy">Detention and layover.</strong> When the clock starts, the rate, and whether it's capped.</li>
+      <li><strong class="text-navy">Benefits cost.</strong> A premium difference of $200/month is $2,400 a year off your pay.</li>
+      <li><strong class="text-navy">Time sitting.</strong> The best rate in the world pays nothing while you wait on a load.</li>
+    </ul>
+
+    <h2 class="mt-12 text-2xl font-bold">Common questions</h2>
+    <div class="mt-6 space-y-6">
+      {faqs.map(f => (
+        <div>
+          <p class="font-semibold text-navy">{f.q}</p>
+          <p class="mt-1 text-slate">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </article>
+
+  <LeadForm />
+</Layout>

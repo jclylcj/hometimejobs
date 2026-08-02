@@ -1,0 +1,24 @@
+---
+const links = [
+  { href: '/home-time', label: 'Home Time' },
+  { href: '/pay', label: 'Pay' },
+  { href: '/carriers', label: 'Carriers' },
+  { href: '/about', label: 'About' },
+];
+---
+<header class="bg-navy text-cream">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href="/" class="text-lg font-bold tracking-tight">
+      HomeTime<span class="text-gold">Jobs</span>
+    </a>
+    <div class="hidden gap-6 text-sm md:flex">
+      {links.map(l => (
+        <a href={l.href} class="hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+    <a href="/#apply"
+       class="rounded bg-gold px-4 py-2 text-sm font-semibold text-navy hover:bg-gold-light transition-colors">
+      Get Matched
+    </a>
+  </nav>
+</header>

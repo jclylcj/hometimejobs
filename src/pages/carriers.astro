@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadForm from '../components/LeadForm.astro';
+---
+<Layout
+  title="Compare Trucking Companies by Home Time"
+  description="Side-by-side comparison of trucking companies by home time schedule, pay structure, freight type, and equipment. Built from what drivers actually report."
+>
+  <section class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">Compare carriers</h1>
+    <p class="mt-4 text-lg text-slate">
+      Home time schedule, pay structure, freight type, equipment, and hiring area —
+      side by side, in the same format, so the comparison is honest.
+    </p>
+
+    <div class="mt-10 rounded-lg border border-navy/10 bg-white p-8">
+      <p class="font-semibold text-navy">Carrier profiles are being built now.</p>
+      <p class="mt-2 text-slate">
+        We're documenting each carrier the same way: what the fleet actually runs,
+        what drivers on it report, and what to ask before you sign. Rather than publish
+        thin listings scraped from job boards, we're doing it properly.
+      </p>
+      <p class="mt-4 text-slate">
+        In the meantime, tell us the schedule you need and we'll match you directly.
+      </p>
+      <a href="#apply"
+         class="mt-6 inline-block rounded bg-gold px-6 py-3 font-semibold text-navy hover:bg-gold-light transition-colors">
+        Get Matched
+      </a>
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold">What each profile will cover</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      {[
+        ['Home time', 'Schedule offered per fleet, and what drivers report actually happens.'],
+        ['Pay structure', 'CPM or percentage, guaranteed minimum, detention, per diem terms.'],
+        ['Freight', 'Dry van, reefer, flatbed. No-touch, drop and hook, or live load.'],
+        ['Equipment', 'Truck age, governed speed, APU, automatic or manual, rider and pet policy.'],
+        ['Hiring area', 'Where they hire from, and how close you need to live to a lane.'],
+        ['Experience required', 'CDL-A minimums, MVR standards, and whether they take recent grads.'],
+      ].map(([t, d]) => (
+        <div class="rounded-lg border border-navy/10 bg-white p-5">
+          <p class="font-semibold text-navy">{t}</p>
+          <p class="mt-1 text-sm text-slate">{d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <LeadForm />
+</Layout>

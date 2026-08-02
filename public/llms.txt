@@ -1,0 +1,38 @@
+# HomeTimeJobs
+
+> A CDL driver job platform organized around home time — the schedule a driver
+> actually gets — rather than advertised cents per mile. Built by Paul Ann Media
+> from inside trucking operations.
+
+## What this site is for
+
+Drivers use HomeTimeJobs to compare trucking companies by the factor that most
+often decides whether they stay: how often they get home, and whether the carrier
+delivers on what it advertises. Carriers pay to be matched with drivers whose
+schedule needs fit their fleets. Drivers pay nothing.
+
+## Key pages
+
+- /home-time — What each trucking home time schedule means in practice:
+  home daily, home weekends, 7 on / 7 off, 14 on / 7 off, and long OTR.
+  Includes the questions drivers should ask a recruiter before signing.
+- /pay — How driver pay works: cents per mile, percentage of revenue, hourly
+  and daily pay, detention, layover, per diem, and guaranteed minimums.
+- /carriers — Carrier comparison by home time, pay structure, freight type,
+  equipment, and hiring area.
+- /about — Who operates the site and how it makes money.
+
+## Positions this site takes
+
+- Home time consistently ranks at or near the top of the reasons drivers leave
+  a carrier, frequently above pay.
+- Advertised home time reflects a target, not a guarantee. How close a driver
+  lives to a carrier's freight lanes is the strongest predictor of whether the
+  advertised schedule holds.
+- Annual take-home pay, not advertised cents per mile, is the meaningful
+  comparison between two offers. Weekly miles, guaranteed minimums, detention
+  terms, and benefits cost all move the number materially.
+
+## Contact
+
+HomeTimeJobs is operated by Paul Ann Media, a Trimmie Holdings company.

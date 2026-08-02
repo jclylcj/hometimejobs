@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const faqs = [
+  {
+    q: 'What does home time mean in trucking?',
+    a: 'Home time is how often a driver returns to their home address, and how long they stay. It is usually expressed as a pattern — home daily, home weekends, 7 on / 7 off — or as a frequency, such as home every 10 to 14 days. It is the single factor most often cited by drivers who leave a carrier.'
+  },
+  {
+    q: 'What does 7 on 7 off mean for truck drivers?',
+    a: 'Seven consecutive days working, followed by seven consecutive days at home. It is one of the most predictable schedules in trucking and is typically offered on dedicated or regional fleets. Because the schedule is fixed, drivers can plan family commitments months ahead, which is rare in over-the-road work.'
+  },
+  {
+    q: 'What is the difference between OTR, regional, and local driving?',
+    a: 'Over-the-road (OTR) drivers run long distances nationally and are typically out two to three weeks at a time. Regional drivers cover a defined multi-state area and are usually home weekends. Local drivers work within a set radius and are home daily, often with more physical loading and unloading involved.'
+  },
+  {
+    q: 'Do trucking companies actually honor their advertised home time?',
+    a: 'It varies significantly by carrier and by fleet within the same carrier. Advertised home time reflects the target, not a guarantee, and it depends on freight lanes, dispatch discipline, and where a driver lives relative to the carrier terminals. Drivers living far from a carrier lane are the most likely to see home time slip.'
+  },
+  {
+    q: 'Does more home time mean less pay?',
+    a: 'Often, but not always. Home daily and dedicated positions typically pay less per year than long OTR because they run fewer miles. However, some dedicated accounts pay hourly or by the day and can be competitive, and drivers who stay longer at a carrier because the schedule works often out-earn those who change jobs repeatedly for slightly higher cents per mile.'
+  },
+  {
+    q: 'How does home time affect driver retention?',
+    a: 'Home time is consistently among the top reasons drivers leave a carrier, frequently ranking above pay in industry retention surveys. A driver whose schedule fits their family situation is substantially more likely to stay, which is why carriers increasingly compete on schedule rather than cents per mile alone.'
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Layout
+  title="Home Time Explained — What Each Trucking Schedule Actually Means"
+  description="Home daily, home weekends, 7 on 7 off, 14 on 7 off. What each trucking home time schedule means in practice, and what to ask a recruiter before you sign."
+  schema={schema}
+>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">Home time, explained</h1>
+    <p class="mt-4 text-lg text-slate">
+      Carriers describe home time in shorthand. The shorthand is not always honest —
+      not because recruiters lie, but because the schedule depends on freight lanes,
+      dispatch, and where you live. Here's how to read it.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">The schedules</h2>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Home daily</h3>
+    <p class="mt-2 text-slate">
+      Local and dedicated work inside a set radius. You sleep at home every night.
+      Trade-offs: usually fewer miles, often earlier start times, and more touch freight —
+      you may be loading and unloading rather than dropping and hooking.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Home weekends</h3>
+    <p class="mt-2 text-slate">
+      Regional running inside a defined multi-state footprint. Out Monday, back Friday or
+      Saturday is the pattern. The question to ask: <em>most</em> weekends, or <em>every</em>
+      weekend? And what time Friday — because home at 11pm Friday is not the same as home at noon.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">7 on / 7 off</h3>
+    <p class="mt-2 text-slate">
+      A week out, a week home. The most predictable schedule in trucking and the hardest to find.
+      Because it's fixed, you can plan a birthday or a doctor's appointment months out —
+      which no other OTR schedule lets you do.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">14 on / 7 off</h3>
+    <p class="mt-2 text-slate">
+      Two weeks out, one week home. More miles than 7/7, still predictable.
+      Common on national fleets that want OTR mileage with a schedule drivers can live with.
+    </p>
+
+    <h3 class="mt-8 text-xl font-semibold text-gold">Long OTR</h3>
+    <p class="mt-2 text-slate">
+      Three weeks or more between home time. Highest miles and typically the highest annual pay.
+      Works for some drivers and quietly destroys others. Be honest with yourself about which you are.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Questions to ask before you sign</h2>
+    <ul class="mt-4 space-y-3 text-slate">
+      <li><strong class="text-navy">Is home time guaranteed or targeted?</strong> There's a large difference, and recruiters will answer honestly if you ask directly.</li>
+      <li><strong class="text-navy">What happens when a load runs long?</strong> Do you get the day back, or is it gone?</li>
+      <li><strong class="text-navy">How far do I live from your lanes?</strong> The single biggest predictor of whether advertised home time holds.</li>
+      <li><strong class="text-navy">What's the average for drivers on my fleet — not company-wide?</strong> Fleet averages differ enormously inside one carrier.</li>
+      <li><strong class="text-navy">Can I speak to a driver currently on that fleet?</strong> A carrier confident in its answer will say yes.</li>
+    </ul>
+
+    <h2 class="mt-12 text-2xl font-bold">Common questions</h2>
+    <div class="mt-6 space-y-6">
+      {faqs.map(f => (
+        <div>
+          <p class="font-semibold text-navy">{f.q}</p>
+          <p class="mt-1 text-slate">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </article>
+
+  <LeadForm />
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadForm from '../components/LeadForm.astro';
+---
+<Layout
+  title="About HomeTimeJobs"
+  description="Built by people who run trucking operations, for drivers deciding where to work next."
+>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">Why this exists</h1>
+
+    <p class="mt-6 text-lg text-slate">
+      Most driver job boards are built around pay, because pay is easy to sort by.
+      But drivers rarely leave a carrier over cents per mile. They leave because they
+      missed something at home that mattered.
+    </p>
+
+    <p class="mt-4 text-slate">
+      So we built this the other way around. Schedule first — what the fleet actually runs,
+      not what the recruiting page advertises. Then pay, translated into what lands in your
+      account. Then equipment, freight, and everything else that decides whether a job is
+      livable a year in.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Who's behind it</h2>
+    <p class="mt-4 text-slate">
+      HomeTimeJobs is built by <strong class="text-navy">Paul Ann Media</strong>, from inside
+      trucking operations rather than outside them. We work in this industry every day —
+      recruiting, safety, maintenance, dispatch — which is how we know which questions
+      actually matter and which ones recruiters hope you don't ask.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">How we make money</h2>
+    <p class="mt-4 text-slate">
+      Carriers pay us when we connect them to a driver who fits. You never pay anything.
+      We'd rather send a carrier five drivers who stay than fifty who quit in ninety days —
+      which means telling you honestly when a job isn't a fit for what you need.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">What we won't do</h2>
+    <ul class="mt-4 space-y-3 text-slate">
+      <li>Sell your information to anyone you didn't ask to hear from.</li>
+      <li>Blast your phone number to a dozen carriers at once.</li>
+      <li>Tell you a schedule is guaranteed when the carrier only calls it a target.</li>
+    </ul>
+  </article>
+
+  <LeadForm />
+</Layout>

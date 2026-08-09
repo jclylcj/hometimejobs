@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 110 1200 220" role="img"
 aria-label="A schedule spectrum from Home Daily through Long OTR, showing increasing time away from home.">
   <rect width="1200" height="330" rx="10" fill="#FFFFFF"/>
-  <text x="58" y="55" fill="#1A2F3D" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="700">Start with the schedule</text>
-  <text x="58" y="82" fill="#7C8A8A" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15">The labels sound simple. The lived schedule is the part that matters.</text>
   <path d="M105 196 H1090" stroke="#CFC8C0" stroke-width="3"/>
   <path d="M105 196 C320 196 470 194 650 196 C830 198 960 193 1090 196" stroke="#2AA09A" stroke-width="5" stroke-linecap="round"/>
 

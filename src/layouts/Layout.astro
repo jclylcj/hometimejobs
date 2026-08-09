@@ -10,12 +10,14 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
 
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "HomeTimeJobs",
   "url": "https://hometimejobs.com",
+  "logo": "https://hometimejobs.com/logo-dark.svg",
   "description": "Driver-first CDL job platform organized around home time.",
   "parentOrganization": {
     "@type": "Organization",
@@ -32,8 +34,11 @@ const orgSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#1A2F3D" />
@@ -42,7 +47,13 @@ const orgSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="HomeTimeJobs" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HomeTimeJobs — the question isn't what it pays, it's when you get home." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

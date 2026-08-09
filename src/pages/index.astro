@@ -3,19 +3,31 @@ import Layout from '../layouts/Layout.astro';
 import LeadForm from '../components/LeadForm.astro';
 
 const schedules = [
-  { name: 'Home Daily', detail: 'Local and dedicated runs. Home every night, usually within a set radius.' },
-  { name: 'Home Weekends', detail: 'Regional. Out during the week, back most weekends.' },
-  { name: '7 on / 7 off', detail: 'A full week out, a full week home. Predictable, and rare.' },
-  { name: '14 on / 7 off', detail: 'Two weeks out, one week home. Common on longer OTR fleets.' },
-  { name: 'Long OTR', detail: 'Three weeks or more between resets. Highest miles, most time away.' },
+  { name: 'Home Daily',    icon: 'schedule-home-daily',    detail: 'Local and dedicated runs. Home every night, usually within a set radius.' },
+  { name: 'Home Weekends', icon: 'schedule-home-weekends', detail: 'Regional. Out during the week, back most weekends.' },
+  { name: '7 on / 7 off',  icon: 'schedule-7-on-7-off',    detail: 'A full week out, a full week home. Predictable, and rare.' },
+  { name: '14 on / 7 off', icon: 'schedule-14-on-7-off',   detail: 'Two weeks out, one week home. Common on longer OTR fleets.' },
+  { name: 'Long OTR',      icon: 'schedule-long-otr',      detail: 'Three weeks or more between resets. Highest miles, most time away.' },
+];
+
+const checks = [
+  { name: 'Home time, verified',   icon: 'check-home-time-verified', detail: 'Not the recruiting brochure — what drivers on that fleet actually experience.' },
+  { name: 'Pay, translated',       icon: 'check-pay-translated',     detail: 'CPM, percentage, per diem, detention, and what the guaranteed minimum really covers.' },
+  { name: 'Equipment and freight', icon: 'check-equipment-freight',  detail: 'Truck age, governed speed, APU, no-touch or not, rider and pet policy.' },
 ];
 ---
 <Layout
   title="HomeTimeJobs — CDL Jobs Organized Around When You Get Home"
   description="Compare home time, pay, and equipment across trucking companies. Find CDL-A driving jobs that fit the life you actually want."
 >
-  <section class="bg-navy text-cream">
-    <div class="mx-auto max-w-4xl px-5 py-20 text-center">
+  <section class="relative overflow-hidden bg-navy text-cream">
+    <img
+      src="/media/hero-road-home.svg"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
+    />
+    <div class="relative mx-auto max-w-4xl px-5 py-20 text-center">
       <h1 class="text-4xl font-bold leading-tight sm:text-5xl">
         The question isn't what it pays.<br />
         <span class="text-gold">It's when you get home.</span>
@@ -38,9 +50,16 @@ const schedules = [
       Here's what each one looks like in practice.
     </p>
 
+    <figure class="mt-8 overflow-x-auto rounded-lg border border-navy/10 bg-white p-4">
+      <img src="/media/schedule-spectrum.svg" alt="" aria-hidden="true"
+           class="h-auto w-full min-w-[720px]" width="1200" height="330" />
+    </figure>
+    <p class="mt-2 text-xs text-slate sm:hidden">Scroll to see the full spectrum &rarr;</p>
+
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {schedules.map(s => (
         <div class="rounded-lg border border-navy/10 bg-white p-5">
+          <img src={`/media/${s.icon}.svg`} alt="" aria-hidden="true" class="mb-4 h-12 w-12" width="48" height="48" />
           <p class="font-semibold text-navy">{s.name}</p>
           <p class="mt-2 text-sm text-slate">{s.detail}</p>
         </div>
@@ -56,24 +75,13 @@ const schedules = [
     <div class="mx-auto max-w-5xl px-5">
       <h2 class="text-2xl font-bold">What we actually check</h2>
       <div class="mt-8 grid gap-8 md:grid-cols-3">
-        <div>
-          <p class="font-semibold text-gold">Home time, verified</p>
-          <p class="mt-2 text-sm text-slate">
-            Not the recruiting brochure — what drivers on that fleet actually experience.
-          </p>
-        </div>
-        <div>
-          <p class="font-semibold text-gold">Pay, translated</p>
-          <p class="mt-2 text-sm text-slate">
-            CPM, percentage, per diem, detention, and what the guaranteed minimum really covers.
-          </p>
-        </div>
-        <div>
-          <p class="font-semibold text-gold">Equipment and freight</p>
-          <p class="mt-2 text-sm text-slate">
-            Truck age, governed speed, APU, no-touch or not, rider and pet policy.
-          </p>
-        </div>
+        {checks.map(c => (
+          <div>
+            <img src={`/media/${c.icon}.svg`} alt="" aria-hidden="true" class="mb-4 h-14 w-14" width="56" height="56" />
+            <p class="font-semibold text-gold">{c.name}</p>
+            <p class="mt-2 text-sm text-slate">{c.detail}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

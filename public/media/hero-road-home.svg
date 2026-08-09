@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img"
+aria-label="A thin teal road rises through schedule markers toward a cream house with a gold window, symbolizing choosing trucking work by home time first.">
+  <rect width="1600" height="700" fill="#1A2F3D"/>
+  <g opacity=".34">
+    <path d="M-30 615 C210 545 315 465 475 402 C665 327 830 333 1000 280 C1160 229 1278 145 1430 96"
+          fill="none" stroke="#2AA09A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-30 648 C235 586 360 505 505 445 C690 369 865 378 1044 326 C1195 282 1309 198 1462 145"
+          fill="none" stroke="#2AA09A" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+  </g>
+
+  <!-- schedule milestones -->
+  <g fill="#1A2F3D" stroke="#F5F0EB" stroke-width="3" opacity=".72">
+    <circle cx="275" cy="513" r="13"/>
+    <circle cx="520" cy="423" r="13"/>
+    <circle cx="790" cy="347" r="13"/>
+    <circle cx="1070" cy="304" r="13"/>
+    <circle cx="1290" cy="191" r="13"/>
+  </g>
+  <g fill="#F2B544">
+    <circle cx="275" cy="513" r="4"/>
+    <circle cx="520" cy="423" r="4"/>
+    <circle cx="790" cy="347" r="4"/>
+    <circle cx="1070" cy="304" r="4"/>
+    <circle cx="1290" cy="191" r="4"/>
+  </g>
+
+  <!-- destination/home -->
+  <g transform="translate(1320,62)" opacity=".92">
+    <path d="M0 86 L72 18 L144 86" fill="none" stroke="#F5F0EB" stroke-width="9" stroke-linecap="square"/>
+    <path d="M26 84 V190 H118 V84" fill="none" stroke="#F5F0EB" stroke-width="9"/>
+    <g fill="#F2B544">
+      <rect x="55" y="98" width="13" height="13"/>
+      <rect x="75" y="98" width="13" height="13"/>
+      <rect x="55" y="118" width="13" height="13"/>
+      <rect x="75" y="118" width="13" height="13"/>
+    </g>
+  </g>
+</svg>

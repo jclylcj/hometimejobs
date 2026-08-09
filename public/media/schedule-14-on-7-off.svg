@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Fourteen on seven off">
+  <rect width="96" height="96" rx="14" fill="none"/>
+  
+  <path d="M17 66 H79" stroke="#1A2F3D" stroke-width="4" stroke-linecap="square"/>
+  <path d="M22 35 V66 M35 35 V66 M48 35 V66 M61 35 V66 M74 35 V66" stroke="#1A2F3D" stroke-width="3"/>
+  <path d="M20 28 C34 18 51 19 66 28" fill="none" stroke="#2AA09A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="72" cy="28" r="5" fill="#F2B544"/>
+  <text x="48" y="86" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#7C8A8A">14 / 7</text>
+
+</svg>

@@ -13,7 +13,7 @@ import { LEAD_FORM_ENABLED } from '../config';
 
     {LEAD_FORM_ENABLED ? (
       <>
-        <p class="mt-3 text-slate">
+        <p class="mt-3 text-slate-light">
           Three fields. No account, no résumé upload. We'll match you against carriers
           whose schedule actually fits your life ... and you'll hear from a real person.
         </p>
@@ -36,14 +36,14 @@ import { LEAD_FORM_ENABLED } from '../config';
               <label for="name" class="block text-sm font-medium">Name</label>
               <input id="name" name="name" type="text" required
                 class="mt-1 w-full rounded border border-white/20 bg-white/5 px-3 py-2
-                       text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+                       text-cream placeholder:text-slate-light focus:border-gold focus:outline-none"
                 placeholder="First and last" />
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium">Phone</label>
               <input id="phone" name="phone" type="tel" required
                 class="mt-1 w-full rounded border border-white/20 bg-white/5 px-3 py-2
-                       text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+                       text-cream placeholder:text-slate-light focus:border-gold focus:outline-none"
                 placeholder="(555) 555-5555" />
             </div>
           </div>
@@ -52,7 +52,7 @@ import { LEAD_FORM_ENABLED } from '../config';
             <label for="email" class="block text-sm font-medium">Email</label>
             <input id="email" name="email" type="email" required
               class="mt-1 w-full rounded border border-white/20 bg-white/5 px-3 py-2
-                     text-cream placeholder:text-slate focus:border-gold focus:outline-none"
+                     text-cream placeholder:text-slate-light focus:border-gold focus:outline-none"
               placeholder="you@example.com" />
           </div>
 
@@ -92,18 +92,18 @@ import { LEAD_FORM_ENABLED } from '../config';
             Find My Match
           </button>
 
-          <p class="text-xs text-slate">
+          <p class="text-xs text-slate-light">
             We share your information only with carriers you're matched to. No spam, no selling your data to anyone else.
           </p>
         </form>
       </>
     ) : (
       <div class="mt-6 rounded-lg border border-white/15 bg-white/5 p-6">
-        <p class="text-slate">
+        <p class="text-slate-light">
           Driver matching opens soon. We're finishing carrier profiles first ... the
           comparison is only worth anything if it's accurate.
         </p>
-        <p class="mt-3 text-slate">
+        <p class="mt-3 text-slate-light">
           In the meantime, the guides below cover what actually decides a good fit:
         </p>
         <div class="mt-5 flex flex-wrap gap-3">

@@ -6,6 +6,9 @@
   --color-gold: #F2B544;
   --color-gold-light: #E8B85A;
   --color-teal: #2AA09A;
+  /* Text-safe shades for light backgrounds (WCAG AA 4.5:1 on cream and white) */
+  --color-gold-ink: #91620A;
+  --color-teal-ink: #1F7672;
   --color-cream: #F5F0EB;
   --color-slate: #5A6B6B;
   --color-slate-light: #A8B4B4;

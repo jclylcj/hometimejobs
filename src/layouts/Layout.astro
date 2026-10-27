@@ -7,6 +7,7 @@ const {
   title,
   description = 'Compare home time, pay, and equipment across trucking companies. Find CDL driving jobs that get you home when you need to be.',
   schema = null,
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -33,6 +34,7 @@ const orgSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

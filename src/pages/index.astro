@@ -25,6 +25,8 @@ const checks = [
       src="/media/hero-road-home.svg"
       alt=""
       aria-hidden="true"
+      width="1600"
+      height="700"
       class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.22]"
     />
     <div class="relative mx-auto max-w-4xl px-5 py-20 text-center">
@@ -66,7 +68,7 @@ const checks = [
       ))}
     </div>
 
-    <a href="/home-time" class="mt-8 inline-block font-semibold text-teal hover:underline">
+    <a href="/home-time/" class="mt-8 inline-flex min-h-11 items-center font-semibold text-teal-ink hover:underline">
       Read the full breakdown &rarr;
     </a>
   </section>
@@ -78,7 +80,7 @@ const checks = [
         {checks.map(c => (
           <div>
             <img src={`/media/${c.icon}.svg`} alt="" aria-hidden="true" class="mb-4 h-14 w-14" width="56" height="56" />
-            <p class="font-semibold text-gold">{c.name}</p>
+            <p class="font-semibold text-gold-ink">{c.name}</p>
             <p class="mt-2 text-sm text-slate">{c.detail}</p>
           </div>
         ))}

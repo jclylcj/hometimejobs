@@ -1,23 +1,23 @@
 ---
 const links = [
-  { href: '/home-time', label: 'Home Time' },
-  { href: '/pay', label: 'Pay' },
-  { href: '/carriers', label: 'Carriers' },
-  { href: '/about', label: 'About' },
+  { href: '/home-time/', label: 'Home Time' },
+  { href: '/pay/', label: 'Pay' },
+  { href: '/carriers/', label: 'Carriers' },
+  { href: '/about/', label: 'About' },
 ];
 ---
 <header class="bg-navy text-cream">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href="/" aria-label="HomeTimeJobs home" class="flex items-center">
+    <a href="/" aria-label="HomeTimeJobs home" class="flex min-h-11 items-center">
       <img src="/logo-header.svg" alt="HomeTimeJobs" class="h-9 w-auto" width="720" height="118" />
     </a>
-    <div class="hidden gap-6 text-sm md:flex">
+    <div class="hidden items-center gap-6 text-sm md:flex">
       {links.map(l => (
-        <a href={l.href} class="hover:text-gold transition-colors">{l.label}</a>
+        <a href={l.href} class="inline-flex min-h-11 items-center hover:text-gold transition-colors">{l.label}</a>
       ))}
     </div>
     <a href="/#apply"
-       class="rounded bg-gold px-4 py-2 text-sm font-semibold text-navy hover:bg-gold-light transition-colors">
+       class="inline-flex min-h-11 items-center rounded bg-gold px-4 text-sm font-semibold text-navy hover:bg-gold-light transition-colors">
       Get Matched
     </a>
   </nav>

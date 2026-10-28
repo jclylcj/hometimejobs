@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LeadForm from '../components/LeadForm.astro';
+import Icon from '../components/Icon.astro';
 ---
 <Layout
   title="About HomeTimeJobs"
@@ -38,10 +39,10 @@ import LeadForm from '../components/LeadForm.astro';
     </p>
 
     <h2 class="mt-12 text-2xl font-bold">What we won't do</h2>
-    <ul class="mt-4 space-y-3 text-slate">
-      <li>Sell your information to anyone you didn't ask to hear from.</li>
-      <li>Blast your phone number to a dozen carriers at once.</li>
-      <li>Tell you a schedule is guaranteed when the carrier only calls it a target.</li>
+    <ul class="mt-5 space-y-3">
+      <li class="flex items-center gap-4 rounded-lg border border-navy/10 bg-white p-4 text-slate"><Icon name="shield-x" class="h-8 w-8 shrink-0 text-navy" /><span>Sell your information to anyone you didn't ask to hear from.</span></li>
+      <li class="flex items-center gap-4 rounded-lg border border-navy/10 bg-white p-4 text-slate"><Icon name="shield-x" class="h-8 w-8 shrink-0 text-navy" /><span>Blast your phone number to a dozen carriers at once.</span></li>
+      <li class="flex items-center gap-4 rounded-lg border border-navy/10 bg-white p-4 text-slate"><Icon name="shield-x" class="h-8 w-8 shrink-0 text-navy" /><span>Tell you a schedule is guaranteed when the carrier only calls it a target.</span></li>
     </ul>
   </article>
 

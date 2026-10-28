@@ -17,3 +17,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Icon accent: deeper amber on light grounds, brand gold on navy */
+:root { --icon-accent: #E2A43A; }
+.bg-navy, .bg-navy-deep { --icon-accent: #F2B544; }

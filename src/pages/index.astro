@@ -1,19 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LeadForm from '../components/LeadForm.astro';
+import Icon from '../components/Icon.astro';
 
 const schedules = [
-  { name: 'Home Daily',    icon: 'schedule-home-daily',    detail: 'Local and dedicated runs. Home every night, usually within a set radius.' },
-  { name: 'Home Weekends', icon: 'schedule-home-weekends', detail: 'Regional. Out during the week, back most weekends.' },
-  { name: '7 on / 7 off',  icon: 'schedule-7-on-7-off',    detail: 'A full week out, a full week home. Predictable, and rare.' },
-  { name: '14 on / 7 off', icon: 'schedule-14-on-7-off',   detail: 'Two weeks out, one week home. Common on longer OTR fleets.' },
-  { name: 'Long OTR',      icon: 'schedule-long-otr',      detail: 'Three weeks or more between resets. Highest miles, most time away.' },
+  { name: 'Home Daily',    icon: 'home-daily',     id: 'home-daily',    detail: 'Local and dedicated runs. Home every night, usually within a set radius.' },
+  { name: 'Home Weekends', icon: 'home-weekends', id: 'home-weekends', detail: 'Regional. Out during the week, back most weekends.' },
+  { name: '7 on / 7 off',  icon: 'seven-seven',   id: 'seven-seven',    detail: 'A full week out, a full week home. Predictable, and rare.' },
+  { name: '14 on / 7 off', icon: 'fourteen-seven', id: 'fourteen-seven',   detail: 'Two weeks out, one week home. Common on longer OTR fleets.' },
+  { name: 'Long OTR',      icon: 'long-otr',      id: 'long-otr',      detail: 'Three weeks or more between resets. Highest miles, most time away.' },
 ];
 
 const checks = [
-  { name: 'Home time, verified',   icon: 'check-home-time-verified', detail: 'Not the recruiting brochure ... what drivers on that fleet actually experience.' },
-  { name: 'Pay, translated',       icon: 'check-pay-translated',     detail: 'CPM, percentage, per diem, detention, and what the guaranteed minimum really covers.' },
-  { name: 'Equipment and freight', icon: 'check-equipment-freight',  detail: 'Truck age, governed speed, APU, no-touch or not, rider and pet policy.' },
+  { name: 'Home time, verified',   icon: 'calendar-check', detail: 'Not the recruiting brochure ... what drivers on that fleet actually experience.' },
+  { name: 'Pay, translated',       icon: 'dollar-week',     detail: 'CPM, percentage, per diem, detention, and what the guaranteed minimum really covers.' },
+  { name: 'Equipment and freight', icon: 'truck',  detail: 'Truck age, governed speed, APU, no-touch or not, rider and pet policy.' },
 ];
 ---
 <Layout
@@ -22,22 +23,22 @@ const checks = [
 >
   <section class="relative flex flex-col overflow-hidden bg-navy text-cream lg:block">
     <div class="relative z-10 mx-auto w-full max-w-6xl px-5 pt-6 pb-14 sm:pt-10 sm:pb-16 lg:py-32">
-      <div class="max-w-xl lg:max-w-lg xl:max-w-xl">
+      <div class="flex max-w-xl flex-col lg:block lg:max-w-lg xl:max-w-xl">
       <h1 class="text-4xl font-bold leading-tight sm:text-5xl text-balance">
         The question isn't what it pays.<br />
         <span class="text-gold">It's when you get home.</span>
       </h1>
-      <p class="mt-6 max-w-xl text-lg text-slate-light">
+      <p class="order-last mt-6 max-w-xl text-lg text-slate-light lg:order-none">
         Every job board leads with cents per mile. Drivers leave over home time.
         We built this the other way around ... schedule first, then pay, then everything else.
       </p>
       <a href="#apply"
-         class="mt-8 inline-block rounded bg-gold px-8 py-3 font-semibold text-navy hover:bg-gold-light transition-colors">
+         class="mt-8 self-start inline-block rounded bg-gold px-8 py-3 font-semibold text-navy hover:bg-gold-light transition-colors">
         Get Matched
       </a>
       </div>
     </div>
-    <div class="relative order-first h-64 sm:h-80 lg:order-none lg:absolute lg:inset-0 lg:h-full">
+    <div class="relative order-first h-56 sm:h-80 lg:order-none lg:absolute lg:inset-0 lg:h-full">
       <img
         src="/media/hero-htj-r2-1900.webp"
         srcset="/media/hero-htj-r2-1000.webp 1000w, /media/hero-htj-r2-1900.webp 1900w"
@@ -68,11 +69,12 @@ const checks = [
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {schedules.map(s => (
-        <div class="rounded-lg border border-navy/10 bg-white p-5">
-          <img src={`/media/${s.icon}.svg`} alt="" aria-hidden="true" class="mb-4 h-12 w-12" width="48" height="48" />
+        <a href={`/home-time/#${s.id}`} class="group block rounded-lg border border-navy/10 bg-white p-5 transition hover:-translate-y-0.5 hover:border-navy/40 hover:shadow-md">
+          <Icon name={s.icon} class="mb-4 h-12 w-12 text-navy" />
           <p class="font-semibold text-navy">{s.name}</p>
           <p class="mt-2 text-sm text-slate">{s.detail}</p>
-        </div>
+          <p class="mt-3 text-sm font-semibold text-teal-ink">See a typical month <span aria-hidden="true" class="inline-block transition group-hover:translate-x-0.5">&rarr;</span></p>
+        </a>
       ))}
     </div>
 
@@ -87,7 +89,7 @@ const checks = [
       <div class="mt-8 grid gap-8 md:grid-cols-3">
         {checks.map(c => (
           <div>
-            <img src={`/media/${c.icon}.svg`} alt="" aria-hidden="true" class="mb-4 h-14 w-14" width="56" height="56" />
+            <Icon name={c.icon} class="mb-4 h-14 w-14 text-navy" />
             <p class="font-semibold text-gold-ink">{c.name}</p>
             <p class="mt-2 text-sm text-slate">{c.detail}</p>
           </div>

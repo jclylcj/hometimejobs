@@ -1,6 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LeadForm from '../components/LeadForm.astro';
+import Icon from '../components/Icon.astro';
+import PayCompare from '../components/PayCompare.astro';
+import Faq from '../components/Faq.astro';
+
+const movers = [
+  ['miles', 'Weekly miles.', '$0.60 at 2,800 miles beats $0.70 at 2,200. Always ask for the fleet average, not the top performer.'],
+  ['floor', 'Guaranteed minimum.', "What you're paid in a bad week. This is the floor that protects you when freight softens."],
+  ['detention', 'Detention and layover.', "When the clock starts, the rate, and whether it's capped."],
+  ['benefits', 'Benefits cost.', 'A premium difference of $200/month is $2,400 a year off your pay.'],
+  ['waiting', 'Time sitting.', 'The best rate in the world pays nothing while you wait on a load.'],
+];
 
 const faqs = [
   {
@@ -49,45 +60,57 @@ const schema = {
 
     <h2 class="mt-12 text-2xl font-bold">The structures</h2>
 
-    <h3 class="mt-8 text-xl font-semibold text-gold-ink">Cents per mile</h3>
+    <div class="mt-8 flex gap-4 rounded-lg border border-navy/10 bg-white p-5">
+      <Icon name="cpm" class="h-10 w-10 shrink-0 text-navy" />
+      <div>
+      <h3 class="text-xl font-semibold text-gold-ink">Cents per mile</h3>
     <p class="mt-2 text-slate">
       The most common model. The number that matters isn't the rate ... it's the rate multiplied by
       the miles you'll actually run, calculated the way that carrier calculates them.
       Ask whether they pay practical miles, and ask what the fleet's weekly average really is.
     </p>
+      </div>
+    </div>
 
-    <h3 class="mt-8 text-xl font-semibold text-gold-ink">Percentage of revenue</h3>
+    <div class="mt-8 flex gap-4 rounded-lg border border-navy/10 bg-white p-5">
+      <Icon name="percent" class="h-10 w-10 shrink-0 text-navy" />
+      <div>
+      <h3 class="text-xl font-semibold text-gold-ink">Percentage of revenue</h3>
     <p class="mt-2 text-slate">
       You take a share of what the load bills. Good markets pay well; soft markets don't.
       More common for owner-operators, and it requires trusting the carrier's transparency
       about what loads actually billed.
     </p>
+      </div>
+    </div>
 
-    <h3 class="mt-8 text-xl font-semibold text-gold-ink">Hourly and daily</h3>
+    <div class="mt-8 flex gap-4 rounded-lg border border-navy/10 bg-white p-5">
+      <Icon name="hourly" class="h-10 w-10 shrink-0 text-navy" />
+      <div>
+      <h3 class="text-xl font-semibold text-gold-ink">Hourly and daily</h3>
     <p class="mt-2 text-slate">
       Usual on dedicated and local accounts. Predictable, and it pays you for time spent
       sitting ... which mileage pay does not. Often the better deal on accounts with heavy
       loading, unloading, or waiting.
     </p>
+      </div>
+    </div>
+
+    <h2 class="mt-12 text-2xl font-bold">Run the numbers</h2>
+    <PayCompare />
 
     <h2 class="mt-12 text-2xl font-bold">What quietly moves the number</h2>
-    <ul class="mt-4 space-y-3 text-slate">
-      <li><strong class="text-navy">Weekly miles.</strong> $0.60 at 2,800 miles beats $0.70 at 2,200. Always ask for the fleet average, not the top performer.</li>
-      <li><strong class="text-navy">Guaranteed minimum.</strong> What you're paid in a bad week. This is the floor that protects you when freight softens.</li>
-      <li><strong class="text-navy">Detention and layover.</strong> When the clock starts, the rate, and whether it's capped.</li>
-      <li><strong class="text-navy">Benefits cost.</strong> A premium difference of $200/month is $2,400 a year off your pay.</li>
-      <li><strong class="text-navy">Time sitting.</strong> The best rate in the world pays nothing while you wait on a load.</li>
+    <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+      {movers.map(([icon, head, text]) => (
+        <li class="flex gap-4 rounded-lg border border-navy/10 bg-white p-4">
+          <Icon name={icon} class="h-9 w-9 shrink-0 text-navy" />
+          <span class="text-slate"><strong class="block text-navy">{head}</strong>{text}</span>
+        </li>
+      ))}
     </ul>
 
     <h2 class="mt-12 text-2xl font-bold">Common questions</h2>
-    <div class="mt-6 space-y-6">
-      {faqs.map(f => (
-        <div>
-          <p class="font-semibold text-navy">{f.q}</p>
-          <p class="mt-1 text-slate">{f.a}</p>
-        </div>
-      ))}
-    </div>
+    <Faq faqs={faqs} />
   </article>
 
   <LeadForm />

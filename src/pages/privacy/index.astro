@@ -1,0 +1,145 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import { LEAD_FORM_ENABLED } from '../../config';
+
+// Draft for owner review. Not legal advice; have counsel read it before the lead form opens.
+const effective = 'November 1, 2026';
+
+const collected = [
+  ['badge', 'What you type into the matching form', 'Name, phone, email, the home time you want, and your CDL-A experience. Nothing else: no résumé, no Social Security number, no license number.'],
+  ['pin', 'What any website receives', "Our host (Netlify) records standard request data, like IP address, browser type and the page asked for, to keep the site running and secure. We don't add analytics, ad trackers or tracking cookies."],
+  ['question', 'What you send us on this page', 'If you use the request form below: your email, what you are asking for, and any details you add. Used only to answer you.'],
+  ['dollar-week', 'What stays on your phone', 'The pay comparison and schedule picker run in your browser. What you type there is never sent to us.'],
+];
+---
+<Layout
+  title="Privacy - HomeTimeJobs"
+  description="What HomeTimeJobs collects, why, who sees it, and how to have it deleted. Plain English."
+>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">Privacy</h1>
+    <p class="mt-4 text-lg text-slate">
+      Plain English. What we collect, why, who sees it, and how to make us delete it.
+    </p>
+    <p class="mt-2 text-sm text-slate">Effective {effective}.</p>
+
+    {!LEAD_FORM_ENABLED && (
+      <div class="mt-8 flex gap-4 rounded-lg border border-gold-ink/40 bg-white p-5">
+        <Icon name="shield-x" class="h-9 w-9 shrink-0 text-navy" />
+        <p class="text-slate">
+          <strong class="block text-navy">Driver matching isn't open yet.</strong>
+          Until it opens, the only thing this site collects is a privacy request, if you send one below. This page also describes what happens once matching opens.
+        </p>
+      </div>
+    )}
+
+    <h2 class="mt-12 text-2xl font-bold">What we collect</h2>
+    <ul class="mt-5 space-y-3">
+      {collected.map(([icon, head, text]) => (
+        <li class="flex gap-4 rounded-lg border border-navy/10 bg-white p-4">
+          <Icon name={icon} class="h-9 w-9 shrink-0 text-navy" />
+          <span class="text-slate"><strong class="block text-navy">{head}</strong>{text}</span>
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="mt-12 text-2xl font-bold">What we use it for</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li>Matching you with carriers whose schedule fits what you asked for.</li>
+      <li>Calling, texting or emailing you about those matches. You can tell us to stop at any time.</li>
+      <li>Keeping the site secure and working.</li>
+    </ul>
+
+    <h2 class="mt-12 text-2xl font-bold">Who sees it</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li><strong class="text-navy">Carriers you're matched to,</strong> and only after we've told you which ones. Not a list of a dozen at once.</li>
+      <li><strong class="text-navy">Companies that run the site for us,</strong> like our web host, which stores form entries. They can use it only to provide that service.</li>
+      <li><strong class="text-navy">Anyone the law requires,</strong> such as a court order.</li>
+    </ul>
+    <p class="mt-4 text-slate">
+      We don't sell your information, and we don't share it for advertising. Ever.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">How long we keep it</h2>
+    <p class="mt-4 text-slate">
+      Form entries are kept for up to 12 months after we last talked with you, then deleted.
+      Ask us to delete sooner and we will.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Your choices</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li>See what we have about you.</li>
+      <li>Correct it.</li>
+      <li>Have it deleted, including from any carrier we sent it to, where we can.</li>
+      <li>Stop calls, texts or email from us. For texts, reply STOP.</li>
+    </ul>
+    <p class="mt-4 text-slate">
+      Some states give you these rights by law. We give them to every driver, wherever you live.
+      We'll answer within 30 days and won't treat you differently for asking.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">AI</h2>
+    <p class="mt-4 text-slate">
+      We don't use your information to train AI models, and AI doesn't decide who you're matched with.
+      More on how we use AI is on our <a href="/transparency/" class="font-semibold text-teal-ink hover:underline">transparency page</a>.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Security</h2>
+    <p class="mt-4 text-slate">
+      The site runs over an encrypted connection, and form entries are stored with our web host,
+      not in spreadsheets or inboxes passed around. No system is perfect; if something goes wrong
+      that affects you, we'll tell you.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Who this is for</h2>
+    <p class="mt-4 text-slate">
+      HomeTimeJobs is for adults looking for CDL driving work. We don't knowingly collect
+      information from anyone under 18.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-bold">Changes</h2>
+    <p class="mt-4 text-slate">
+      If this page changes in a way that matters, we'll update the date at the top and, if we have
+      your contact information, tell you before it applies to you.
+    </p>
+
+    <h2 id="contact" class="mt-12 text-2xl font-bold">Ask us</h2>
+    <p class="mt-4 text-slate">
+      HomeTimeJobs is a Paul Ann Media company. Use this form for anything on this page:
+      seeing, correcting or deleting your information, or stopping contact.
+    </p>
+    <form
+      name="privacy-request"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="company-website"
+      action="/privacy/sent/"
+      class="mt-6 space-y-4 rounded-lg border border-navy/10 bg-white p-5 sm:p-6"
+    >
+      <input type="hidden" name="form-name" value="privacy-request" />
+      <p class="hidden"><label>Leave this blank: <input name="company-website" /></label></p>
+      <label class="block text-sm font-medium text-navy">Your email
+        <input name="email" type="email" required autocomplete="email"
+          class="mt-1 w-full min-h-11 rounded border border-navy/20 bg-white px-3 text-navy focus:border-navy focus:outline-none" />
+      </label>
+      <label class="block text-sm font-medium text-navy">What you want
+        <select name="request" required
+          class="mt-1 w-full min-h-11 rounded border border-navy/20 bg-white px-3 text-navy focus:border-navy focus:outline-none">
+          <option value="">Select one</option>
+          <option>See what you have about me</option>
+          <option>Correct my information</option>
+          <option>Delete my information</option>
+          <option>Stop contacting me</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="block text-sm font-medium text-navy">Details (optional)
+        <textarea name="details" rows="3"
+          class="mt-1 w-full rounded border border-navy/20 bg-white px-3 py-2 text-navy focus:border-navy focus:outline-none"></textarea>
+      </label>
+      <button type="submit" class="min-h-11 rounded bg-gold px-6 font-semibold text-navy hover:bg-gold-light">Send request</button>
+      <p class="text-xs text-slate">We use this only to answer your request.</p>
+    </form>
+  </article>
+</Layout>

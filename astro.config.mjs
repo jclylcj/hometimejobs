@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://hometimejobs.com',
-  integrations: [sitemap({ filter: (page) => !page.includes('/thank-you') })],
+  integrations: [sitemap({ filter: (page) => !page.includes('/thank-you') && !page.includes('/privacy/sent') })],
   vite: {
     plugins: [tailwindcss()],
   },
